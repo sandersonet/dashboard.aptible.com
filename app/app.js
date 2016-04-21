@@ -2,6 +2,7 @@ import Ember from 'ember';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember/load-initializers';
 import config from './config/environment';
+
 import { RouteExtension, RouterExtension } from 'diesel/utils/title-route-extensions';
 import monkeyPatchRaven from './ext/raven';
 import bustFrames from 'ember-cli-aptible-shared/utils/frame-buster';
@@ -20,9 +21,6 @@ App = Ember.Application.extend({
 });
 
 loadInitializers(App, config.modulePrefix);
-
 monkeyPatchRaven();
-
 bustFrames();
-
 export default App;

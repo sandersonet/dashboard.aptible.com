@@ -1,7 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  redirect: function() {
+  model() {
+    return this.store.find('organization');
+  },
+
+  afterModel(model) {
     this.transitionTo('stacks');
   }
 });

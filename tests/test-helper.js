@@ -1,9 +1,9 @@
 /* globals QUnit */
-
 import resolver from './helpers/resolver';
 import {
   setResolver
 } from 'ember-qunit';
+
 import config from "../config/environment";
 import FakeServer from 'ember-cli-fake-server';
 import MockStripe from './helpers/mock-stripe';
@@ -12,6 +12,8 @@ import storage from '../utils/storage';
 import MockLocation from './helpers/mock-location';
 import MockTitle from './helpers/mock-title';
 import './helpers/authentication';
+import Cookies from 'ember-cli-aptible-shared/utils/cookies';
+import { AFTER_AUTH_COOKIE } from '../app';
 
 setResolver(resolver);
 
@@ -27,6 +29,8 @@ QUnit.testStart(function(){
 });
 
 QUnit.testDone(function(){
+  Cookies.erase(AFTER_AUTH_COOKIE);
+  Error.stackTraceLimit = 999;
   MockLocation.teardown();
   MockTitle.teardown();
   MockStripe.teardown();

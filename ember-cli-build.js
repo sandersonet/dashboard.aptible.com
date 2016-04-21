@@ -6,7 +6,8 @@ module.exports = function(defaults) {
   var options = {
     emberCliFontAwesome: { includeFontAwesomeAssets: false },
     vendorFiles: {
-      'handlebars.js': null
+      'handlebars.js': null,
+      fingerprint: { exclude: ['assets/images/data-environments']
     }
   };
 
