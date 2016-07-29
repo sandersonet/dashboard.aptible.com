@@ -7,7 +7,7 @@ export default Ember.Route.extend({
       this.transitionTo('login');
     },
 
-    error(err) {
+    xerror(err) {
       this.intermediateTransitionTo('error', err);
       this.get('raven').captureException(err);
     }
