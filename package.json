@@ -67,7 +67,8 @@
     "ember-validations": "2.0.0-alpha.3",
     "express": "^4.8.5",
     "glob": "^4.0.5",
-    "liquid-fire": "ef4/liquid-fire#v0.23.0",
+    "heimdalljs": "^0.1.2",
+    "liquid-fire": "0.24.1",
     "silent-error": "^1.0.0",
     "torii": "^0.6.0-beta.4"
   },
