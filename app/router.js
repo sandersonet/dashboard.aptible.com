@@ -132,9 +132,18 @@ Router.map(function() {
           this.route("edit", {path: ":user_id/edit"});
         });
         this.route("roles", {}, function() {
-          this.route("platform");
+          this.route("platform", function() {
+            this.modal('new-role-modal', {
+              withParams: ['newRole'],
+              otherParams: ['organization'],
+              dismissWithOutsideClick: false
+            });
+          });
           this.route("compliance");
           this.route('new');
+
+          
+
         });
         this.route("invite");
         this.route('contact-settings');

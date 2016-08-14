@@ -6,7 +6,7 @@
       <div class="resource-actions pull-right">
         {{#aptible-ability scope="manage" user=session.currentUser permittable=organization as |hasAbility|}}
           {{#if hasAbility}}
-            {{#link-to 'organization.roles.new' classNames='btn btn-primary'}}Create Role{{/link-to}}
+            <button class="btn btn-primary" {{action "openNewRoleModal"}}>Create Role</button>
           {{/if}}
         {{/aptible-ability}}
       </div>

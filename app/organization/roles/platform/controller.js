@@ -1,6 +1,7 @@
 import Ember from "ember";
 
 export default Ember.Controller.extend({
+  newRole: null,
   confirmationModal: Ember.inject.service(),
 
   ownerRole: Ember.computed.filterBy('model', 'isAccountOwner'),
@@ -10,6 +11,11 @@ export default Ember.Controller.extend({
   }),
 
   actions: {
+    openNewRoleModal() {
+      let newRole = this.store.createRecord('role');
+      this.set('newRole', newRole);
+    },
+
     inviteTo(role) {
       let organization = this.get('organization');
       this.transitionToRoute('organization.invite', organization, {queryParams: {role}});
